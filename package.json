@@ -1,0 +1,37 @@
+{
+  "name": "webdriverjscucumber",
+  "version": "1.0.0",
+  "description": "Automated software testing with WB",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio wdio.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mate0u/WebdriverJSCucumber.git"
+  },
+  "keywords": [
+    "Automation",
+    "WebDriver"
+  ],
+  "author": "ThisTallGay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mate0u/WebdriverJSCucumber/issues"
+  },
+  "homepage": "https://github.com/Mate0u/WebdriverJSCucumber#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.8",
+    "@wdio/cli": "^7.2.3",
+    "@wdio/local-runner": "^7.2.3",
+    "@wdio/mocha-framework": "^7.2.1",
+    "@wdio/spec-reporter": "^7.2.1",
+    "@wdio/sync": "^7.2.3",
+    "chromedriver": "^89.0.0",
+    "prettier": "^2.2.1",
+    "wdio-chromedriver-service": "^7.0.0"
+  }
+}
