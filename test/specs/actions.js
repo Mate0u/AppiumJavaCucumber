@@ -40,6 +40,5 @@ describe('Browser actions', () => {
 		const selectBox = browser.$('#preferred-interface')
 		selectBox.waitForExist()
 		selectBox.selectByVisibleText('JavaScript API')
-        browser.pause(300)
 	})
 })
