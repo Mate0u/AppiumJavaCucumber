@@ -22,7 +22,9 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-        './test/specs/example.e2e.js'
+        './test/specs/example.e2e.js',
+        './test/specs/exampleWB.js',
+        './test/specs/devexpress.js'
     ],
     //
     // ============
@@ -67,7 +69,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -130,7 +132,15 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
+    // reporters: ['dot'],
     port: 4444,
+    // port: 4723,
+    // services: [
+    //     ['appium', {
+    //         logPath : './',
+    //         command: 'appium' 
+    //     }]
+    // ],
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
