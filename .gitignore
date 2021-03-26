@@ -24,4 +24,4 @@ hs_err_pid*
 node_modules
 
 # screenshots
-./test/screenshots
+./test/screenshots/*.png
