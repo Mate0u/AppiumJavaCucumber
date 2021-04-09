@@ -1,0 +1,51 @@
+describe('E2E test - Find transaction', () => {
+	it('Open page and login', () => {
+		browser.url('http://zero.webappsecurity.com/index.html')
+		const signInButton = browser.$('#signin_button')
+		signInButton.waitForExist()
+		signInButton.click()
+		const usernameInputField = browser.$('#user_login')
+		usernameInputField.waitForExist()
+		usernameInputField.setValue('username')
+		const passwordInputField = browser.$('#user_password')
+		passwordInputField.waitForExist()
+		passwordInputField.setValue('password')
+		const loginButton = browser.$('input[type=submit]')
+		loginButton.waitForExist()
+		loginButton.click()
+		const tabToCheck = browser.$('#online_statements_tab')
+		tabToCheck.waitForExist()
+	})
+	it('Find transaction', () => {
+		const accountActivityButton = browser.$('#account_activity_tab')
+		accountActivityButton.waitForExist()
+		accountActivityButton.click()
+		const findButton = browser.$('#tabs > ul > li:nth-child(2) > a')
+		findButton.waitForExist()
+		findButton.click()
+		const descriptionField = browser.$('#aa_description')
+		descriptionField.waitForExist()
+		descriptionField.setValue('test')
+		const findConfirmButton = browser.$(
+			'#find_transactions_form > div.pull-right > button'
+		)
+		findConfirmButton.waitForExist()
+		findConfirmButton.click()
+		const resultList = browser.$('#filtered_transactions_for_account')
+		resultList.waitForExist()
+		expect(resultList).toHaveText('No results.')
+		const typeSelectbox = browser.$('#aa_type')
+		typeSelectbox.waitForExist()
+		typeSelectbox.selectByAttribute('value', 'DEPOSIT')
+        descriptionField.clearValue()
+		findConfirmButton.waitForExist()
+		findConfirmButton.click()
+		const resultElemetDescription = browser.$(
+			'#filtered_transactions_for_account > table > tbody > tr:nth-child(1) > td:nth-child(2)'
+		)
+		resultElemetDescription.waitForExist()
+		expect(resultElemetDescription).toHaveText(
+			'ONLINE TRANSFER REF #UKKSDRQG6L'
+		)
+	})
+})
